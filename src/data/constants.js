@@ -1,23 +1,47 @@
 export const PERSON = {
   name: 'Amalathas Dilshan',
   shortName: 'Dilshan',
-  title: 'Information Technology Undergraduate',
+  title: 'AI/ML Engineer & Data Science Student',
+  tagline:
+    'Building intelligent systems with machine learning, data science, and full-stack engineering.',
   email: 'amalathasdilshan@gmail.com',
   phone: '0768720035',
   location: 'Sri Lanka',
   university: 'SLIIT Northern Uni',
   specialization: 'Data Science',
-  /** Put your photo in the public folder (see README). Examples: /profile.jpg or /profile.png */
-  profileImage: '/profile.jpg',
-  github: 'https://github.com/',
+  profileImage: '/public.jpeg',
+  cvUrl: '/CV.pdf',
+  github: 'https://github.com/IT24102859',
   linkedin: 'https://linkedin.com/in/',
   typingRoles: [
-    'Data Science Undergraduate',
-    'AI/ML Enthusiast',
+    'AI/ML Engineer',
+    'Data Science Student',
     'Full-Stack Developer',
-    'Software Engineer',
+    'Machine Learning Enthusiast',
   ],
-};
+  stats: [
+    { label: 'Projects', value: '3+' },
+    { label: 'Focus', value: 'AI/ML' },
+    { label: 'Stack', value: 'Full-Stack' },
+  ],
+}
+
+export const MAILTO = {
+  hire: `mailto:${PERSON.email}?subject=${encodeURIComponent('Hire Me — Portfolio Inquiry')}`,
+  contact: `mailto:${PERSON.email}?subject=${encodeURIComponent('Contact Me — Portfolio Inquiry')}`,
+}
+
+/** Top skills shown as icon cards — import icons in SkillIconGrid */
+export const SKILL_HIGHLIGHTS = [
+  { name: 'Python', iconKey: 'python' },
+  { name: 'TensorFlow', iconKey: 'ml' },
+  { name: 'React', iconKey: 'react' },
+  { name: 'Django', iconKey: 'django' },
+  { name: 'SQL', iconKey: 'sql' },
+  { name: 'MongoDB', iconKey: 'mongo' },
+  { name: 'ML', iconKey: 'brain' },
+  { name: 'Data', iconKey: 'chart' },
+];
 
 export const NAV_LINKS = [
   { id: 'home', label: 'Home' },

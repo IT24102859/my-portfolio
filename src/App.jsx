@@ -27,8 +27,7 @@ function App() {
         <div className="mesh-bg grid-overlay relative min-h-screen">
           <FuturisticBackground />
           <ParticleBackground />
-          <div className="vignette" aria-hidden />
-          <div className="scanlines" aria-hidden />
+          <div className="vignette pointer-events-none" aria-hidden />
           <ScrollProgress />
           <Navbar />
           <main className="relative z-10">

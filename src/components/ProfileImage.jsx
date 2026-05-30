@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { PERSON } from '../data/constants'
 
-const FALLBACK_CHAIN = ['/profile.jpg', '/profile.jpeg', '/profile.png', '/profile.webp', '/profile.svg']
+const FALLBACK_CHAIN = ['/public.jpeg', '/profile.jpg', '/profile.png', '/profile.svg']
 
 export default function ProfileImage({ className = '' }) {
-  const preferred = PERSON.profileImage || '/profile.jpg'
+  const preferred = PERSON.profileImage || '/public.jpeg'
   const sources = [preferred, ...FALLBACK_CHAIN.filter((s) => s !== preferred)]
   const [srcIndex, setSrcIndex] = useState(0)
 
@@ -19,6 +19,7 @@ export default function ProfileImage({ className = '' }) {
       className={className}
       onError={handleError}
       decoding="async"
+      fetchPriority="high"
     />
   )
 }

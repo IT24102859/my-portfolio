@@ -17,17 +17,17 @@ function getParticleOptions(isMobile, reducedMotion) {
     fpsLimit: isMobile ? 45 : 60,
     particles: {
       number: {
-        value: isMobile ? 35 : 90,
+        value: isMobile ? 28 : 55,
         density: { enable: true, width: 1200, height: 800 },
       },
-      color: { value: ['#00d4ff', '#b026ff', '#00fff0', '#ff00aa'] },
-      opacity: { value: { min: 0.15, max: isMobile ? 0.4 : 0.55 } },
+      color: { value: ['#38bdf8', '#8b5cf6', '#a78bfa'] },
+      opacity: { value: { min: 0.06, max: isMobile ? 0.18 : 0.28 } },
       size: { value: { min: 1, max: isMobile ? 2 : 2.5 } },
       links: {
         enable: !isMobile,
         distance: 130,
-        color: '#00d4ff',
-        opacity: 0.25,
+        color: '#38bdf8',
+        opacity: 0.12,
         width: 1,
       },
       move: {

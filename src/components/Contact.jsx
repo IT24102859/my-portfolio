@@ -7,6 +7,9 @@ import { PERSON } from '../data/constants'
 
 const initialForm = { name: '', email: '', subject: '', message: '' }
 
+const inputClass =
+  'w-full rounded-xl border border-slate-500/40 bg-slate-900/80 px-4 py-3.5 text-base text-slate-50 placeholder:text-slate-500 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-400/30'
+
 export default function Contact() {
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
@@ -69,7 +72,10 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-pad relative py-16 sm:py-20 md:px-8 md:py-24 lg:px-12">
+    <section
+      id="contact"
+      className="section-pad section-radial relative py-20 sm:py-24 md:px-8 md:py-28 lg:px-12"
+    >
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           tag="Contact"
@@ -79,7 +85,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10">
           <motion.div
-            className="space-y-6 lg:col-span-2"
+            className="space-y-4 lg:col-span-2"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -89,25 +95,30 @@ export default function Contact() {
               { icon: FaPhone, label: 'Phone', value: PERSON.phone, href: `tel:${PERSON.phone}` },
               { icon: FaMapMarkerAlt, label: 'Location', value: PERSON.location },
             ].map((item) => (
-              <div key={item.label} className="neo-card flex items-start gap-4 rounded-lg p-4">
-                <item.icon className="mt-1 shrink-0 text-xl text-blue-400" />
+              <div
+                key={item.label}
+                className="flex items-start gap-4 rounded-2xl border border-slate-500/30 bg-slate-800 p-5 shadow-lg shadow-black/25"
+              >
+                <item.icon className="mt-0.5 shrink-0 text-xl text-sky-400" />
                 <div>
-                  <p className="text-sm text-slate-500">{item.label}</p>
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                    {item.label}
+                  </p>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="break-all text-sm font-medium text-white hover:text-cyan-400 sm:text-base"
+                      className="mt-1 block break-all text-base font-medium text-slate-50 hover:text-sky-300"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="font-medium text-white">{item.value}</p>
+                    <p className="mt-1 text-base font-medium text-slate-50">{item.value}</p>
                   )}
                 </div>
               </div>
             ))}
 
-            <div className="flex gap-4">
+            <div className="flex gap-3 pt-2">
               {[
                 { icon: FaGithub, href: PERSON.github, label: 'GitHub' },
                 { icon: FaLinkedin, href: PERSON.linkedin, label: 'LinkedIn' },
@@ -119,7 +130,7 @@ export default function Contact() {
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="neo-card flex h-12 w-12 items-center justify-center rounded-lg text-cyan-300/80 transition hover:text-cyan-300"
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-500/30 bg-slate-800 text-sky-300 transition hover:border-sky-400/50 hover:text-sky-200 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
                 >
                   <Icon size={20} />
                 </a>
@@ -129,7 +140,7 @@ export default function Contact() {
 
           <motion.form
             onSubmit={handleSubmit}
-            className="neo-card gradient-border rounded-xl p-4 sm:p-6 lg:col-span-3 md:p-8"
+            className="rounded-2xl border border-slate-500/30 bg-slate-800 p-6 shadow-xl shadow-black/30 lg:col-span-3 md:p-8"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -137,7 +148,7 @@ export default function Contact() {
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm text-slate-400">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
                   Name
                 </label>
                 <input
@@ -145,13 +156,13 @@ export default function Contact() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-base text-white outline-none transition focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                  className={inputClass}
                   placeholder="Your name"
                 />
-                {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+                {errors.name && <p className="mt-1.5 text-sm text-red-400">{errors.name}</p>}
               </div>
               <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm text-slate-400">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
                   Email
                 </label>
                 <input
@@ -160,14 +171,14 @@ export default function Contact() {
                   type="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-base text-white outline-none transition focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                  className={inputClass}
                   placeholder="you@email.com"
                 />
-                {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
+                {errors.email && <p className="mt-1.5 text-sm text-red-400">{errors.email}</p>}
               </div>
             </div>
             <div className="mt-5">
-              <label htmlFor="subject" className="mb-1.5 block text-sm text-slate-400">
+              <label htmlFor="subject" className="mb-2 block text-sm font-medium text-slate-300">
                 Subject
               </label>
               <input
@@ -175,13 +186,13 @@ export default function Contact() {
                 name="subject"
                 value={form.subject}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-base text-white outline-none transition focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                className={inputClass}
                 placeholder="Project inquiry"
               />
-              {errors.subject && <p className="mt-1 text-xs text-red-400">{errors.subject}</p>}
+              {errors.subject && <p className="mt-1.5 text-sm text-red-400">{errors.subject}</p>}
             </div>
             <div className="mt-5">
-              <label htmlFor="message" className="mb-1.5 block text-sm text-slate-400">
+              <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
                 Message
               </label>
               <textarea
@@ -190,22 +201,22 @@ export default function Contact() {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-base text-white outline-none transition focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/30"
+                className={`${inputClass} resize-none`}
                 placeholder="Tell me about your project..."
               />
-              {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
+              {errors.message && <p className="mt-1.5 text-sm text-red-400">{errors.message}</p>}
             </div>
 
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="btn-cyber touch-target relative mt-6 w-full rounded-lg py-3.5 text-base font-medium text-white disabled:opacity-60"
+              className="btn-cyber touch-target relative mt-6 w-full rounded-xl py-3.5 text-base font-semibold text-white disabled:opacity-60"
             >
               {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
 
             {status === 'success' && (
-              <p className="mt-3 text-sm text-green-400">Message sent successfully!</p>
+              <p className="mt-3 text-sm font-medium text-emerald-400">Message sent successfully!</p>
             )}
             {status === 'error' && (
               <p className="mt-3 text-sm text-red-400">
@@ -213,7 +224,7 @@ export default function Contact() {
               </p>
             )}
             {status === 'mailto' && (
-              <p className="mt-3 text-sm text-amber-400">
+              <p className="mt-3 text-sm text-amber-300">
                 EmailJS not configured — opening your email client instead.
               </p>
             )}

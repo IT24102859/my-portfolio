@@ -13,7 +13,10 @@ const iconComponents = {
 
 export default function Services() {
   return (
-    <section id="services" className="section-pad relative py-16 sm:py-20 md:px-8 md:py-24 lg:px-12">
+    <section
+      id="services"
+      className="section-pad section-radial relative py-20 sm:py-24 md:px-8 md:py-28 lg:px-12"
+    >
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           tag="Services"
@@ -27,18 +30,25 @@ export default function Services() {
             return (
               <motion.article
                 key={service.title}
-                className="neo-card group gradient-border rounded-xl p-6"
+                className="group relative overflow-hidden rounded-2xl border border-slate-500/30 bg-slate-800 shadow-lg shadow-black/30 transition hover:border-sky-400/50 hover:shadow-[0_0_32px_rgba(56,189,248,0.2)]"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -6, scale: 1.02 }}
+                whileHover={{ y: -6 }}
               >
-                <div className="mb-4 inline-flex rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-3 text-2xl text-cyan-400 shadow-[0_0_20px_rgba(0,212,255,0.15)] transition group-hover:border-purple-500/40 group-hover:text-purple-400">
-                  <Icon />
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-sky-400/10 blur-2xl transition group-hover:bg-violet-500/15" />
+                <div className="relative p-6 sm:p-7">
+                  <div className="mb-5 inline-flex rounded-xl border border-sky-400/40 bg-sky-500/15 p-3.5 text-2xl text-sky-300 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
+                    <Icon aria-hidden />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-slate-50 sm:text-xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="font-display text-lg font-semibold text-white">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{service.description}</p>
               </motion.article>
             )
           })}

@@ -21,6 +21,7 @@ import {
 } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import SkillBar from './SkillBar'
+import SkillIconGrid from './SkillIconGrid'
 import { TECHNICAL_SKILLS, SOFT_SKILLS } from '../data/constants'
 
 const iconMap = {
@@ -51,13 +52,15 @@ export default function Skills() {
         <SectionHeading
           tag="Skills"
           title="Technical Expertise"
-          subtitle="Tools and technologies I use to build intelligent, data-driven applications."
+          subtitle="Core technologies for AI/ML engineering, data science, and full-stack development."
         />
+
+        <SkillIconGrid />
 
         <div className="grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-2">
           <div>
-            <h3 className="mb-6 flex items-center gap-2 font-display text-lg font-semibold tracking-wide text-white">
-              <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00d4ff]" />
+            <h3 className="mb-6 flex items-center gap-2 font-display text-lg font-semibold tracking-wide text-[var(--text-primary)]">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[var(--glow-sm)]" />
               Technical Skills
             </h3>
             <div className="space-y-4">
@@ -74,8 +77,8 @@ export default function Skills() {
           </div>
 
           <div>
-            <h3 className="mb-6 flex items-center gap-2 font-display text-lg font-semibold tracking-wide text-white">
-              <span className="h-2 w-2 rounded-full bg-purple-400 shadow-[0_0_8px_#b026ff]" />
+            <h3 className="mb-6 flex items-center gap-2 font-display text-lg font-semibold tracking-wide text-[var(--text-primary)]">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent-secondary)] shadow-[var(--glow-sm)]" />
               Soft Skills
             </h3>
             <div className="space-y-4">
@@ -97,8 +100,8 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-display font-semibold text-cyan-100">Core Focus Areas</h4>
-              <ul className="mt-4 space-y-3 text-sm text-slate-400">
+              <h4 className="font-display font-semibold text-[var(--text-primary)]">Core Focus Areas</h4>
+              <ul className="mt-4 space-y-3 text-sm text-[var(--text-secondary)]">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_#00d4ff]" />
                   AI & Machine Learning

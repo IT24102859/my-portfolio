@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaBrain, FaBullseye, FaUsers } from 'react-icons/fa'
+import { FaGraduationCap, FaBrain, FaBullseye, FaCode } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import { PERSON } from '../data/constants'
 
@@ -7,38 +7,27 @@ const cards = [
   {
     icon: FaGraduationCap,
     title: 'Education',
-    content: `Currently pursuing an undergraduate degree in Information Technology specializing in Data Science at ${PERSON.university}.`,
-    color: 'blue',
+    content: `BSc in Information Technology (Data Science) at ${PERSON.university}. Strong foundation in statistics, programming, databases, and software engineering.`,
   },
   {
     icon: FaBrain,
-    title: 'Passion for AI & ML',
+    title: 'AI & Machine Learning',
     content:
-      'Deeply interested in Artificial Intelligence, Machine Learning, and building intelligent systems that solve real-world problems through data and automation.',
-    color: 'purple',
+      'Passionate about building intelligent systems — from recommendation engines and forecasting models to data-driven decision support tools.',
+  },
+  {
+    icon: FaCode,
+    title: 'Engineering',
+    content:
+      'Experienced in full-stack development with React, Django, MERN, and SQL Server. Focus on clean architecture, APIs, and production-ready code.',
   },
   {
     icon: FaBullseye,
-    title: 'Career Objective',
+    title: 'Career Goals',
     content:
-      'Seeking internship opportunities to apply academic knowledge in industry settings, contribute to AI/ML and software engineering teams, and grow as a technology professional.',
-    color: 'cyan',
-  },
-  {
-    icon: FaUsers,
-    title: 'Personal Strengths',
-    content:
-      'Strong problem-solving and analytical thinking skills, effective teamwork and communication, and adaptability when learning new technologies and tackling complex challenges.',
-    color: 'pink',
+      'Seeking internship opportunities in AI/ML and software engineering to apply academic knowledge, collaborate with industry teams, and grow as a technologist.',
   },
 ]
-
-const iconColors = {
-  blue: 'text-cyan-400 shadow-[0_0_20px_rgba(0,212,255,0.3)]',
-  purple: 'text-purple-400 shadow-[0_0_20px_rgba(176,38,255,0.3)]',
-  cyan: 'text-[#00fff0] shadow-[0_0_20px_rgba(0,255,240,0.3)]',
-  pink: 'text-pink-400 shadow-[0_0_20px_rgba(255,0,170,0.3)]',
-}
 
 export default function About() {
   return (
@@ -46,45 +35,47 @@ export default function About() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           tag="About Me"
-          title="Who I Am"
-          subtitle="An aspiring technologist driven by curiosity, code, and intelligent systems."
+          title="AI/ML Engineer in Training"
+          subtitle="Turning data and code into intelligent, scalable solutions."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <motion.div
+          className="neo-card gradient-border mb-10 rounded-2xl p-6 sm:p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
+            I&apos;m <strong className="text-[var(--text-primary)]">{PERSON.name}</strong>, an IT
+            undergraduate specializing in{' '}
+            <strong className="text-[var(--accent)]">{PERSON.specialization}</strong>. I combine
+            machine learning, data analysis, and software engineering to design systems that are
+            intelligent, reliable, and user-centered — from AI-powered hostel management to sales
+            forecasting and enterprise stock platforms.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
           {cards.map((card, i) => (
             <motion.article
               key={card.title}
-              className="neo-card gradient-border group rounded-xl p-6"
-              initial={{ opacity: 0, y: 30 }}
+              className="neo-card gradient-border rounded-xl p-5 sm:p-6"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <card.icon className={`mb-4 text-2xl ${iconColors[card.color]}`} />
-              <h3 className="font-display text-lg font-semibold tracking-wide text-cyan-50">
+              <card.icon className="mb-4 text-2xl text-[var(--accent)]" />
+              <h3 className="font-display text-lg font-semibold text-[var(--text-primary)]">
                 {card.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-slate-400">{card.content}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--text-secondary)]">
+                {card.content}
+              </p>
             </motion.article>
           ))}
         </div>
-
-        <motion.div
-          className="neo-card gradient-border mt-10 rounded-xl p-8 text-center"
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-lg leading-relaxed text-slate-300 md:text-xl">
-            I combine{' '}
-            <span className="font-semibold text-cyan-400">software engineering</span>,{' '}
-            <span className="font-semibold text-purple-400">data science</span>, and{' '}
-            <span className="font-semibold text-[#00fff0]">full-stack development</span>{' '}
-            to create solutions that are scalable, intelligent, and user-focused.
-          </p>
-        </motion.div>
       </div>
     </section>
   )

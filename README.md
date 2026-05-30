@@ -23,6 +23,14 @@ This portfolio is already set up. Use only:
 - `npm run dev` — start development server
 - `npm run build` — production build
 
+## Features
+
+- AI/ML-focused hero, about, projects, and skills sections
+- Glassmorphism UI with dark/light mode toggle (navbar sun/moon icon)
+- Framer Motion animations and animated skill bars
+- Download CV, GitHub & LinkedIn links
+- Fully responsive mobile layout
+
 ## Add your profile photo
 
 1. Save your photo as **`public/profile.jpg`** (recommended), or `public/profile.png`.
@@ -40,7 +48,7 @@ profileImage: '/my-photo.png',
 | Item | Location |
 |------|----------|
 | Profile photo | Copy your image to `public/profile.jpg` (or `.png`) — see below |
-| Resume PDF | `public/resume.pdf` |
+| CV / Resume PDF | `public/cv.pdf` (also supports `public/resume.pdf`) |
 | GitHub / LinkedIn | `src/data/constants.js` |
 | Contact form (EmailJS) | Copy `.env.example` to `.env` and add keys |
 

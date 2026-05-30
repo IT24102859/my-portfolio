@@ -45,16 +45,18 @@ export default function SkillBar({
         <div className="flex min-w-0 items-center gap-3">
           {Icon && (
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-cyan-500/25 bg-cyan-500/10">
-              <Icon className="text-base text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+              <Icon className="text-base text-[var(--accent)]" />
             </span>
           )}
-          <span className={`min-w-0 flex-1 truncate font-medium text-slate-200 ${compact ? 'text-sm' : 'text-sm sm:text-base'}`}>
+          <span
+            className={`min-w-0 flex-1 truncate font-medium text-[var(--text-primary)] ${compact ? 'text-sm' : 'text-sm sm:text-base'}`}
+          >
             {name}
           </span>
         </div>
         <motion.span
-          className="font-mono text-sm tabular-nums text-purple-400"
-          animate={filled ? { color: '#00fff0' } : {}}
+          className="font-mono text-sm tabular-nums text-[var(--accent-secondary)]"
+          animate={filled ? { opacity: 1 } : { opacity: 0.8 }}
           transition={{ duration: 0.3 }}
         >
           {count}%
