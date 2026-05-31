@@ -27,8 +27,8 @@ export default function Hero() {
         >
           <div className="relative mx-auto flex flex-col items-center">
             <motion.div
-              className="pointer-events-none absolute -inset-4 rounded-full bg-gradient-to-br from-[var(--gradient-start)]/40 to-[var(--accent-secondary)]/40 blur-2xl"
-              animate={{ opacity: [0.3, 0.55, 0.3], scale: [1, 1.05, 1] }}
+              className="pointer-events-none absolute -inset-4 rounded-full bg-gradient-to-br from-[var(--gradient-start)]/25 to-[var(--accent-secondary)]/25"
+              animate={{ opacity: [0.2, 0.35, 0.2] }}
               transition={{ duration: 4, repeat: Infinity }}
               aria-hidden
             />

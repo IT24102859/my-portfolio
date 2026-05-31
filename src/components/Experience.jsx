@@ -52,7 +52,7 @@ function TimelineCard({ item, align = 'left' }) {
       <div className="gradient-border overflow-hidden rounded-2xl">
         <div className="glass-card relative rounded-2xl p-5 sm:p-7">
           <div
-            className={`pointer-events-none absolute -top-20 h-40 w-40 rounded-full bg-[var(--accent)]/10 blur-3xl ${
+            className={`pointer-events-none absolute -top-20 h-40 w-40 rounded-full bg-[var(--accent)]/10  ${
               align === 'right' ? 'left-0' : 'right-0'
             }`}
             aria-hidden
@@ -93,7 +93,7 @@ export default function Experience() {
       className="section-pad section-radial relative overflow-hidden py-20 sm:py-24 md:px-8 md:py-28 lg:px-12"
     >
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-secondary)]/5 blur-[100px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-secondary)]/5 "
         aria-hidden
       />
 
@@ -170,7 +170,7 @@ export default function Experience() {
                       <div className="gradient-border overflow-hidden rounded-2xl">
                         <div className="glass-card relative rounded-2xl p-6 lg:p-7">
                           <div
-                            className={`pointer-events-none absolute -top-16 h-32 w-32 rounded-full bg-[var(--accent)]/10 blur-3xl ${
+                            className={`pointer-events-none absolute -top-16 h-32 w-32 rounded-full bg-[var(--accent)]/10  ${
                               isLeft ? 'left-0' : 'right-0'
                             }`}
                           />

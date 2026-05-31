@@ -1,3 +1,5 @@
+import { publicPath } from '../utils/publicPath'
+
 export const PERSON = {
   name: 'Amalathas Dilshan',
   shortName: 'Dilshan',
@@ -9,8 +11,8 @@ export const PERSON = {
   location: 'Sri Lanka',
   university: 'SLIIT Northern Uni',
   specialization: 'Data Science',
-  profileImage: '/public.jpeg',
-  cvUrl: '/CV.pdf',
+  profileImage: publicPath('public.jpeg'),
+  cvUrl: publicPath('CV.pdf'),
   github: 'https://github.com/IT24102859',
   linkedin: 'https://linkedin.com/in/',
   typingRoles: [

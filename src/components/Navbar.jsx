@@ -53,7 +53,7 @@ export default function Navbar() {
         className={`mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-2xl border transition-all duration-300 ${
           scrolled
             ? 'glass-strong border-[var(--border)] py-2.5 shadow-[var(--glow-sm)] md:py-3'
-            : 'border-[var(--border)]/40 bg-[var(--surface)]/40 py-3 backdrop-blur-md md:py-4'
+            : 'border-[var(--border)] bg-[var(--surface)] py-3 md:py-4'
         }`}
         aria-label="Main navigation"
       >

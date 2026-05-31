@@ -15,7 +15,7 @@ export default function FuturisticBackground() {
       {orbs.map((orb, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full blur-3xl"
+          className="absolute rounded-full"
           style={{
             width: orb.size,
             height: orb.size,

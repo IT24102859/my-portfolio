@@ -24,7 +24,7 @@ function App() {
       </AnimatePresence>
 
       {!loading && (
-        <div className="mesh-bg grid-overlay relative min-h-screen">
+        <div className="mesh-bg relative min-h-screen">
           <FuturisticBackground />
           <ParticleBackground />
           <div className="vignette pointer-events-none" aria-hidden />

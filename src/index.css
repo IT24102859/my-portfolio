@@ -11,8 +11,8 @@
 [data-theme='dark'] {
   --bg-page: #0f172a;
   --bg-elevated: #1e293b;
-  --surface: rgba(30, 41, 59, 0.65);
-  --surface-strong: rgba(30, 41, 59, 0.88);
+  --surface: #1e293b;
+  --surface-strong: #1e293b;
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
@@ -38,8 +38,8 @@
 [data-theme='light'] {
   --bg-page: #f1f5f9;
   --bg-elevated: #ffffff;
-  --surface: rgba(255, 255, 255, 0.75);
-  --surface-strong: rgba(255, 255, 255, 0.95);
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #64748b;
@@ -75,6 +75,9 @@ body {
   background-color: var(--bg-page);
   color: var(--text-primary);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
@@ -98,24 +101,18 @@ body {
 
 .glass {
   background: var(--surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   box-shadow: var(--glow-sm);
 }
 
 .glass-strong {
   background: var(--surface-strong);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
   border: 1px solid var(--border-strong);
   box-shadow: var(--glow-md);
 }
 
 .neo-card {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(148, 163, 184, 0.25);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.35),
@@ -136,9 +133,7 @@ body {
 }
 
 .glass-card {
-  background: rgba(30, 41, 59, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #1e293b;
   border: 1px solid rgba(148, 163, 184, 0.28);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   color: var(--text-primary);
@@ -159,13 +154,11 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer-text 8s linear infinite;
-  filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.35));
 }
 
-/* Readable section titles — solid fallback for Orbitron headings */
+/* Readable section titles */
 .section-title {
   color: var(--text-primary);
-  text-shadow: 0 0 40px rgba(56, 189, 248, 0.25);
 }
 
 @keyframes shimmer-text {
@@ -217,6 +210,7 @@ body {
 }
 
 .mesh-bg {
+  position: relative;
   background-color: var(--bg-page);
   background-image:
     radial-gradient(ellipse 100% 80% at 50% -30%, var(--mesh-1), transparent 50%),
@@ -224,17 +218,19 @@ body {
   transition: background-color 0.35s ease;
 }
 
-.grid-overlay {
+/* Grid on a background layer only — opacity on parent was blurring/fading all content */
+.mesh-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background-image:
-    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
-  opacity: 0.35;
-}
-
-[data-theme='light'] .grid-overlay {
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 .cyber-horizon {
@@ -541,8 +537,7 @@ body {
 }
 
 .mobile-menu-backdrop {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.75);
 }
 
 [data-theme='light'] .mobile-menu-backdrop {

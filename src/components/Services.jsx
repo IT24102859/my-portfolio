@@ -37,7 +37,7 @@ export default function Services() {
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
               >
-                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-sky-400/10 blur-2xl transition group-hover:bg-violet-500/15" />
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-sky-400/15 transition group-hover:bg-violet-500/20" />
                 <div className="relative p-6 sm:p-7">
                   <div className="mb-5 inline-flex rounded-xl border border-sky-400/40 bg-sky-500/15 p-3.5 text-2xl text-sky-300 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
                     <Icon aria-hidden />
