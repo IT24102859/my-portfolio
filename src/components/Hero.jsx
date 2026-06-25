@@ -59,7 +59,7 @@ export default function Hero() {
           >
             <span className="status-dot" />
             <span className="hud-badge rounded px-2.5 py-1 sm:px-3 sm:py-1.5">
-              Available for internships
+              Available for Data Science Internships
             </span>
           </motion.div>
 

@@ -13,7 +13,7 @@ const cards = [
     icon: FaBrain,
     title: 'AI & Machine Learning',
     content:
-      'Passionate about building intelligent systems — from recommendation engines and forecasting models to data-driven decision support tools.',
+      'Passionate about building intelligent systems - from recommendation engines and forecasting models to data-driven decision support tools.',
   },
   {
     icon: FaCode,
@@ -25,7 +25,7 @@ const cards = [
     icon: FaBullseye,
     title: 'Career Goals',
     content:
-      'Seeking internship opportunities in AI/ML and software engineering to apply academic knowledge, collaborate with industry teams, and grow as a technologist.',
+      'Seeking a Data Science Intern opportunity to apply academic knowledge, collaborate with industry teams, and grow through real-world analytics and AI projects.',
   },
 ]
 
@@ -46,12 +46,12 @@ export default function About() {
           viewport={{ once: true }}
         >
           <p className="text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
-            I&apos;m <strong className="text-[var(--text-primary)]">{PERSON.name}</strong>, an IT
-            undergraduate specializing in{' '}
-            <strong className="text-[var(--accent)]">{PERSON.specialization}</strong>. I combine
-            machine learning, data analysis, and software engineering to design systems that are
-            intelligent, reliable, and user-centered — from AI-powered hostel management to sales
-            forecasting and enterprise stock platforms.
+            I&apos;m <strong className="text-[var(--text-primary)]">{PERSON.name}</strong>, a
+            motivated Data Science undergraduate with a strong passion for artificial intelligence,
+            machine learning, data analytics, and modern software technologies. Through academic
+            learning and hands-on projects, I&apos;ve built strong analytical thinking,
+            problem-solving skills, and practical experience in creating intelligent, data-driven
+            solutions for real-world challenges.
           </p>
         </motion.div>
 

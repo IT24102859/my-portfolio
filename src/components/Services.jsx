@@ -20,7 +20,7 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           tag="Services"
-          title="What I Offer"
+          title="What I Can Do"
           subtitle="Solutions I can help build for teams, startups, and academic collaborations."
         />
 

@@ -22,26 +22,38 @@ function ProjectCard({ project, index, featured = false }) {
       whileHover={canHover ? { y: -6 } : undefined}
     >
       <div
-        className={`relative overflow-hidden border-b border-cyan-500/20 bg-gradient-to-br from-cyan-600/20 via-purple-600/25 to-pink-600/10 p-4 sm:p-6 ${
-          featured ? 'min-h-[140px] sm:min-h-[180px]' : 'min-h-[120px] sm:h-40'
+        className={`relative overflow-hidden border-b border-cyan-500/20 bg-[#080812] p-4 sm:p-6 ${
+          featured ? 'min-h-[220px] sm:min-h-[280px]' : 'min-h-[180px] sm:h-48'
         }`}
       >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.imageAlt || project.title}
+            loading={featured ? 'eager' : 'lazy'}
+            className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-purple-600/25 to-pink-600/10" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#030308] via-[#030308]/70 to-[#030308]/15" />
+        <div className="absolute inset-0 bg-cyan-950/10 mix-blend-color" />
         {featured && (
-          <span className="mb-3 inline-flex w-fit items-center gap-1.5 rounded border border-cyan-400/40 bg-cyan-500/15 px-2 py-0.5 font-mono text-[9px] tracking-wider text-cyan-300 uppercase sm:absolute sm:top-4 sm:left-4 sm:mb-0 sm:px-2.5 sm:py-1 sm:text-[10px]">
+          <span className="relative z-10 mb-3 inline-flex w-fit items-center gap-1.5 rounded border border-cyan-400/40 bg-cyan-950/70 px-2 py-0.5 font-mono text-[9px] tracking-wider text-cyan-200 uppercase shadow-[0_0_18px_rgba(0,212,255,0.25)] backdrop-blur sm:absolute sm:top-4 sm:left-4 sm:mb-0 sm:px-2.5 sm:py-1 sm:text-[10px]">
             <FaRobot className="shrink-0 text-cyan-400" />
             <span>Flagship · AI</span>
           </span>
         )}
         <span
-          className={`font-mono text-[10px] text-cyan-300/90 sm:text-xs ${
+          className={`relative z-10 rounded border border-white/10 bg-black/45 px-2 py-1 font-mono text-[10px] text-cyan-200 backdrop-blur sm:text-xs ${
             featured ? 'block sm:absolute sm:top-4 sm:right-4' : 'absolute top-3 right-3 sm:top-4 sm:right-4'
           }`}
         >
           [{project.year}]
         </span>
-        <div className={`relative z-10 ${featured ? 'mt-1 sm:mt-8' : 'pr-12'}`}>
+        <div className={`relative z-10 flex h-full flex-col justify-end ${featured ? 'mt-14 sm:mt-20' : 'min-h-32 pr-12'}`}>
           <h3
-            className={`font-display font-bold leading-snug text-white ${
+            className={`font-display font-bold leading-snug text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] ${
               featured ? 'text-base sm:text-xl md:text-2xl' : 'text-base sm:text-lg'
             }`}
           >
@@ -56,7 +68,6 @@ function ProjectCard({ project, index, featured = false }) {
             <p className="mt-1.5 text-xs text-slate-400 sm:mt-2 sm:text-sm">{project.role}</p>
           )}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030308] via-[#030308]/40 to-transparent opacity-80" />
       </div>
 
       <div className={`flex flex-1 flex-col p-4 sm:p-6 ${featured ? 'md:p-8' : ''}`}>

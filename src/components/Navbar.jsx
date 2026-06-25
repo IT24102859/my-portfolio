@@ -70,7 +70,7 @@ export default function Navbar() {
               Dilshan
             </span>
             <span className="font-mono text-[10px] tracking-wider text-[var(--text-secondary)] uppercase">
-              AI/ML Portfolio
+              Data Science Portfolio
             </span>
           </span>
         </button>

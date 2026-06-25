@@ -5,11 +5,11 @@ import SectionHeading from './SectionHeading'
 const timeline = [
   {
     icon: FaSearch,
-    title: 'Internship Seeking',
+    title: 'Data Science Intern',
     period: 'Present',
     status: 'Active',
     description:
-      'Actively seeking internship opportunities in AI/ML, software engineering, and full-stack development to gain hands-on industry experience.',
+      'Actively seeking Data Science internship opportunities to apply analytics, machine learning, and software development skills to real-world business problems.',
   },
   {
     icon: FaLaptopCode,

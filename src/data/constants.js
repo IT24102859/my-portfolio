@@ -3,7 +3,7 @@ import { publicPath } from '../utils/publicPath'
 export const PERSON = {
   name: 'Amalathas Dilshan',
   shortName: 'Dilshan',
-  title: 'AI/ML Engineer & Data Science Student',
+  title: 'Data Science Intern & AI Enthusiast',
   tagline:
     'Building intelligent systems with machine learning, data science, and full-stack engineering.',
   email: 'amalathasdilshan@gmail.com',
@@ -16,14 +16,14 @@ export const PERSON = {
   github: 'https://github.com/IT24102859',
   linkedin: 'https://linkedin.com/in/',
   typingRoles: [
-    'AI/ML Engineer',
+    'Data Science Intern',
     'Data Science Student',
     'Full-Stack Developer',
     'Machine Learning Enthusiast',
   ],
   stats: [
     { label: 'Projects', value: '3+' },
-    { label: 'Focus', value: 'AI/ML' },
+    { label: 'Focus', value: 'Data Science' },
     { label: 'Stack', value: 'Full-Stack' },
   ],
 }
@@ -88,6 +88,10 @@ export const PROJECTS = [
     category: 'ai',
     featured: true,
     role: 'Full-Stack Developer · AI Integration',
+    image:
+      'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1400&q=80',
+    imageAlt:
+      'Modern student accommodation with bunk beds, matching the hostel management project context',
     description:
       'An intelligent hostel management system for student room listings, accommodations, and end-to-end booking workflows — powered by AI recommendations and real-time data insights.',
     highlights: [
@@ -117,6 +121,10 @@ export const PROJECTS = [
     title: 'Stock Management System',
     year: 2025,
     category: 'software',
+    image:
+      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+    imageAlt:
+      'Warehouse shelves and inventory boxes representing stock management workflows',
     description:
       'Stock management platform for inventory and stock transactions with real-time tracking and reporting.',
     highlights: [
@@ -131,6 +139,10 @@ export const PROJECTS = [
     title: 'Sales Forecasting Model',
     year: 2025,
     category: 'ml',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    imageAlt:
+      'Analytics dashboard with charts representing sales forecasting and data insights',
     description:
       'Machine learning-based sales forecasting model with preprocessing, feature engineering, and model training for business insights.',
     highlights: [
